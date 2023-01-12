@@ -6,6 +6,7 @@ import {
   AcademicCapIcon,
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import Benifit from "./Benifit";
 
 const benifits: Array<BenifitType> = [
   {
@@ -49,8 +50,14 @@ const Benifits = ({ setSelectedPage }: Props) => {
         </div>
         {/* BENIFITS */}
         <div className="mt-5 items-center justify-between gap-8 md:flex">
-          {benifits.map((benifit) => (
-            <Benifit />
+          {benifits.map((benifit: BenifitType) => (
+            <Benifit
+              key={benifit.title}
+              icon={benifit.icon}
+              title={benifit.title}
+              description={benifit.description}
+              setSelectedPage={setSelectedPage}
+            />
           ))}
         </div>
       </motion.div>
